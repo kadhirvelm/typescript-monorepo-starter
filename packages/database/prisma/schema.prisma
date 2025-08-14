@@ -1,0 +1,12 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../src"
+  previewFeatures = ["driverAdapters"]
+  binaryTargets   = ["native", "linux-arm64-openssl-3.0.x", "darwin-arm64"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_HOST_URL")
+  directUrl = env("DIRECT_URL")
+}

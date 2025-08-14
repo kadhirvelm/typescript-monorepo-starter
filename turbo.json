@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["NODE_LINKER"],
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "dev": {
+      "env": ["POSTGRES_PASSWORD", "PUBLIC_URL", "DATABASE_HOST_URL", "DIRECT_URL"]
+    },
+    "lint": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "ci": {
+      "dependsOn": [
+        "build",
+        "lint"
+      ]
+    },
+    "db:migrate": {
+      "env": ["DATABASE_HOST_URL", "DIRECT_URL"]
+    }
+  }
+}

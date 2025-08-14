@@ -1,64 +1,69 @@
-import { ServiceError, AvailableServices, ServiceDefinition, AVAILABLE_SERVICES } from "@tsm-example/api";
+import {
+	AVAILABLE_SERVICES,
+	type AvailableServices,
+	type ServiceDefinition,
+	type ServiceError,
+} from "@tsm-example/api";
 import { convertErrorToString } from "../lib/convertErrorToString";
-import { AvailableServiceCaller, ServiceCaller } from "./types";
+import type { AvailableServiceCaller, ServiceCaller } from "./types";
 
 function makeFetchRequest<ReturnValue>(
-  resolvedSlug: string
+	resolvedSlug: string,
 ): (payload: unknown) => Promise<ReturnValue | ServiceError> {
-  return async (payload: unknown) => {
-    try {
-      const response = await fetch(resolvedSlug, {
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-Type": "application/json"
-        },
-        method: "POST"
-      });
+	return async (payload: unknown) => {
+		try {
+			const response = await fetch(resolvedSlug, {
+				body: JSON.stringify(payload),
+				headers: {
+					"Content-Type": "application/json",
+				},
+				method: "POST",
+			});
 
-      return response.json();
-    } catch (error) {
-      return {
-        code: 500,
-        message: `Error captured in the browser: ${convertErrorToString(error)}`,
-        path: resolvedSlug,
-        type: "error"
-      };
-    }
-  };
+			return response.json();
+		} catch (error) {
+			return {
+				code: 500,
+				message: `Error captured in the browser: ${convertErrorToString(error)}`,
+				path: resolvedSlug,
+				type: "error",
+			};
+		}
+	};
 }
 
 function constructSingleServiceCaller<Key extends keyof AvailableServices>(
-  hostUrl: string,
-  serviceDefinition: ServiceDefinition<AvailableServices[Key]>
+	hostUrl: string,
+	serviceDefinition: ServiceDefinition<AvailableServices[Key]>,
 ): ServiceCaller<AvailableServices[Key]> {
-  const serviceCaller = {} as ServiceCaller<AvailableServices[Key]>;
+	const serviceCaller = {} as ServiceCaller<AvailableServices[Key]>;
 
-  for (const [endpoint, slug] of Object.entries(serviceDefinition.endpoints)) {
-    const typedEndpoint = endpoint as keyof ServiceCaller<
-      AvailableServices[Key]
-    >;
-    const resolvedSlug = `${hostUrl}/${serviceDefinition.controller}/${slug}`;
+	for (const [endpoint, slug] of Object.entries(serviceDefinition.endpoints)) {
+		const typedEndpoint = endpoint as keyof ServiceCaller<
+			AvailableServices[Key]
+		>;
+		const resolvedSlug = `${hostUrl}/${serviceDefinition.controller}/${slug}`;
 
-    serviceCaller[typedEndpoint] = makeFetchRequest(resolvedSlug);
-  }
+		serviceCaller[typedEndpoint] = makeFetchRequest(resolvedSlug);
+	}
 
-  return serviceCaller;
+	return serviceCaller;
 }
 
 export function getAvailableServiceCallers(
-  hostUrl: string
+	hostUrl: string,
 ): AvailableServiceCaller {
-  const services: {
-    [key: string]: ServiceCaller<AvailableServices[keyof AvailableServices]>;
-  } = {};
+	const services: {
+		[key: string]: ServiceCaller<AvailableServices[keyof AvailableServices]>;
+	} = {};
 
-  for (const [key, serviceDefinition] of Object.entries(AVAILABLE_SERVICES)) {
-    const typedKey = key as keyof AvailableServices;
-    services[typedKey] = constructSingleServiceCaller<typeof typedKey>(
-      hostUrl,
-      serviceDefinition
-    );
-  }
+	for (const [key, serviceDefinition] of Object.entries(AVAILABLE_SERVICES)) {
+		const typedKey = key as keyof AvailableServices;
+		services[typedKey] = constructSingleServiceCaller<typeof typedKey>(
+			hostUrl,
+			serviceDefinition,
+		);
+	}
 
-  return services as AvailableServiceCaller;
+	return services as AvailableServiceCaller;
 }

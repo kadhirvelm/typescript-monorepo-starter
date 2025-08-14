@@ -120,88 +120,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.GameStateScalarFieldEnum = {
-  gameId: 'gameId',
-  gameState: 'gameState',
-  gameConfiguration: 'gameConfiguration',
-  currentGameState: 'currentGameState',
-  gameType: 'gameType',
-  version: 'version',
-  lastUpdatedAt: 'lastUpdatedAt',
-  inviteCode: 'inviteCode',
-  snapshotState: 'snapshotState',
-  snapshotId: 'snapshotId'
-};
-
-exports.Prisma.SnapshotStateScalarFieldEnum = {
-  snapshotId: 'snapshotId',
-  description: 'description',
-  gameSlice: 'gameSlice',
-  gameType: 'gameType',
-  localSlice: 'localSlice',
-  playerSlice: 'playerSlice',
-  timestamp: 'timestamp'
-};
-
-exports.Prisma.PlayersInGameScalarFieldEnum = {
-  gameId: 'gameId',
-  playerId: 'playerId',
-  team: 'team',
-  hasExited: 'hasExited',
-  connectionStatus: 'connectionStatus'
-};
-
-exports.Prisma.PlayerScalarFieldEnum = {
-  playerId: 'playerId',
-  displayName: 'displayName',
-  avatarCollection: 'avatarCollection'
-};
-
-exports.Prisma.SortOrder = {
-  asc: 'asc',
-  desc: 'desc'
-};
-
-exports.Prisma.JsonNullValueInput = {
-  JsonNull: Prisma.JsonNull
-};
-
-exports.Prisma.NullableJsonNullValueInput = {
-  DbNull: Prisma.DbNull,
-  JsonNull: Prisma.JsonNull
-};
-
-exports.Prisma.QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
-};
-
-exports.Prisma.JsonNullValueFilter = {
-  DbNull: Prisma.DbNull,
-  JsonNull: Prisma.JsonNull,
-  AnyNull: Prisma.AnyNull
-};
-
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
-};
-exports.CurrentGameState = exports.$Enums.CurrentGameState = {
-  waiting: 'waiting',
-  playing: 'playing',
-  finished: 'finished'
-};
-
-exports.ConnectionStatus = exports.$Enums.ConnectionStatus = {
-  connected: 'connected',
-  disconnected: 'disconnected'
-};
 
 exports.Prisma.ModelName = {
-  GameState: 'GameState',
-  SnapshotState: 'SnapshotState',
-  PlayersInGame: 'PlayersInGame',
-  Player: 'Player'
+
 };
 
 /**

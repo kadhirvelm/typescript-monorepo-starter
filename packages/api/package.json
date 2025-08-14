@@ -1,0 +1,11 @@
+{
+	"name": "@tsm-example/api",
+	"version": "0.0.1",
+	"scripts": {
+		"lint": "biome check",
+		"lint:fix": "biome check --fix"
+	},
+	"devDependencies": {
+		"typescript": "5.8.3"
+	}
+}

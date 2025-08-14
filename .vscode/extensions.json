@@ -1,10 +1,10 @@
 {
-  "recommendations": [
-    "ms-azuretools.vscode-docker",
-    "eamodio.gitlens",
-    "christian-kohler.npm-intellisense",
-    "dbaeumer.vscode-eslint",
-    "graphite.gti-vscode",
-    "prisma.prisma"
-  ]
+	"recommendations": [
+		"ms-azuretools.vscode-docker",
+		"eamodio.gitlens",
+		"christian-kohler.npm-intellisense",
+		"dbaeumer.vscode-eslint",
+		"graphite.gti-vscode",
+		"prisma.prisma"
+	]
 }

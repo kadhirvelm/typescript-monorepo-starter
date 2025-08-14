@@ -54,6 +54,7 @@ echo -e "\033[33mUpdated PUBLIC_URL in .env file\033[0m"
 turn_on_services() {
     docker-compose -p application -f docker-compose.yml up -d
     rm .env.bak
+    cd packages/database && bun run db:migrate && cd ../..
     # Run turbo in foreground - don't background this process
     turbo run dev --ui=tui
 }

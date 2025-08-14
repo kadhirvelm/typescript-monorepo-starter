@@ -17,10 +17,11 @@
 			"dependsOn": ["^build"]
 		},
 		"ci": {
-			"dependsOn": ["build", "lint"]
+			"dependsOn": ["build", "lint", "test"]
 		},
 		"db:migrate": {
 			"env": ["DATABASE_HOST_URL", "DIRECT_URL"]
-		}
+		},
+		"test": {}
 	}
 }

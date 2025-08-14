@@ -9,7 +9,7 @@
 		"serve": "pm2-runtime start ecosystem.config.js",
 		"lint": "biome check",
 		"lint:fix": "biome check --fix",
-		"test": "jest",
+		"test": "jest --colors",
 		"test:watch": "jest --watch"
 	},
 	"dependencies": {

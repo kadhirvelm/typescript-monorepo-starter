@@ -14,7 +14,8 @@
 		"lint": "turbo run lint",
 		"dev": "./scripts/env.sh",
 		"dev:reset": "./scripts/env.sh reset",
-		"dev:local": "./scripts/env.sh local"
+		"dev:local": "./scripts/env.sh local",
+		"test": "turbo run test"
 	},
 	"monorepo": true,
 	"devDependencies": {

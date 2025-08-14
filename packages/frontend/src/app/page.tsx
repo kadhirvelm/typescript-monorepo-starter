@@ -24,8 +24,8 @@ export default function Home() {
 	return (
 		<Flex
 			align="center"
-			justify="center"
 			gap="2"
+			justify="center"
 			style={{ height: "100vh", width: "100vw" }}
 		>
 			Hello world!

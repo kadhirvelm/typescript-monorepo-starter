@@ -5,6 +5,9 @@
 		"christian-kohler.npm-intellisense",
 		"dbaeumer.vscode-eslint",
 		"graphite.gti-vscode",
-		"prisma.prisma"
+		"prisma.prisma",
+		"yoavbls.pretty-ts-errors",
+		"streetsidesoftware.code-spell-checker",
+		"ms-azuretools.vscode-containers"
 	]
 }

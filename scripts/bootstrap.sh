@@ -1,9 +1,9 @@
 #!/bin/bash
 
 curl -fsSL https://bun.com/install | bash
-nvm install stable
-nvm use stable
-nvm alias default stable
+nvm install 23.11.0
+nvm use 23.11.0
+nvm alias default 23.11.0
 
 echo "@@@ Using node version: $(node -v) @@@"
 

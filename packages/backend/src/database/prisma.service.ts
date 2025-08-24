@@ -4,13 +4,13 @@ import type { ConfigurationService } from "@/configuration/configuration.service
 
 @Injectable()
 export class PrismaService {
-	public logger = new Logger("PrismaClient");
+  public logger = new Logger("PrismaClient");
 
-	public client: PrismaClient;
+  public client: PrismaClient;
 
-	constructor(private configService: ConfigurationService) {
-		const environment = this.configService.get("NODE_ENV");
-		this.logger.log(`Creating prisma client - ${environment}`);
-		this.client = new PrismaClient();
-	}
+  constructor(private configService: ConfigurationService) {
+    const environment = this.configService.get("NODE_ENV");
+    this.logger.log(`Creating prisma client - ${environment}`);
+    this.client = new PrismaClient();
+  }
 }

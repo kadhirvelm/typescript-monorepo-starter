@@ -9,37 +9,37 @@ import styles from "./layout.module.scss";
 import "@radix-ui/themes/styles.css";
 
 export const viewport: Viewport = {
-	initialScale: 1,
-	maximumScale: 1,
-	userScalable: false,
-	width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  width: "device-width",
 };
 
 export const metadata: Metadata = {
-	description: "TBD",
-	title: "TBD",
-	viewport: viewport,
+  description: "TBD",
+  title: "TBD",
+  viewport: viewport,
 };
 
 const font = Dosis({
-	subsets: ["latin"],
-	weight: "400",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<html lang="en">
-			<body className={clsx(styles.body, font.className)}>
-				<Theme className={styles.entryPoint} hasBackground={false}>
-					{children}
-					<Analytics />
-					<SpeedInsights />
-				</Theme>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body className={clsx(styles.body, font.className)}>
+        <Theme className={styles.entryPoint} hasBackground={false}>
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </Theme>
+      </body>
+    </html>
+  );
 }

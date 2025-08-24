@@ -5,20 +5,20 @@ import { Injectable } from "@nestjs/common";
  * at build time.
  */
 export interface Configuration {
-	DATABASE_HOST_URL: string | undefined;
-	DIRECT_URL: string | undefined;
-	NODE_ENV: "production" | "development";
+  DATABASE_HOST_URL: string | undefined;
+  DIRECT_URL: string | undefined;
+  NODE_ENV: "production" | "development";
 }
 
 @Injectable()
 export class ConfigurationService {
-	private configuration: Configuration = {
-		DATABASE_HOST_URL: process.env.DATABASE_HOST_URL,
-		DIRECT_URL: process.env.DIRECT_URL,
-		NODE_ENV: process.env.NODE_ENV as "production" | "development",
-	};
+  private configuration: Configuration = {
+    DATABASE_HOST_URL: process.env.DATABASE_HOST_URL,
+    DIRECT_URL: process.env.DIRECT_URL,
+    NODE_ENV: process.env.NODE_ENV as "production" | "development",
+  };
 
-	public get<T extends keyof Configuration>(key: T): Configuration[T] {
-		return this.configuration[key];
-	}
+  public get<T extends keyof Configuration>(key: T): Configuration[T] {
+    return this.configuration[key];
+  }
 }

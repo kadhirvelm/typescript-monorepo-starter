@@ -3,7 +3,7 @@ import { ConfigurationService } from "./configuration.service";
 
 @Global()
 @Module({
-	exports: [ConfigurationService],
-	providers: [ConfigurationService],
+  exports: [ConfigurationService],
+  providers: [ConfigurationService],
 })
 export class ConfigurationModule {}

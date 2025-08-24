@@ -1,12 +1,12 @@
 "use client";
 
 import { Flex, Text } from "@radix-ui/themes";
-import { ClientServiceCallers } from "../services/serviceCallers";
+import { ClientServiceCallers } from "../services/clientServiceCallers";
 import { useCallService } from "../services/useCallService";
 
 export default function Home() {
   const { result, isLoading, error } = useCallService(() =>
-    ClientServiceCallers.health.ready({}),
+    ClientServiceCallers.health.ready(),
   );
 
   const renderHealthStatus = () => {

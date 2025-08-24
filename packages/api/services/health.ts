@@ -2,7 +2,7 @@ import type { Service, ServiceDefinition } from "../genericTypes/service";
 
 export interface HealthServiceApi extends Service {
   ready: {
-    payload: Record<string, never>;
+    payload: null;
     response: { status: string };
   };
 }
@@ -10,6 +10,9 @@ export interface HealthServiceApi extends Service {
 export const HealthServiceDefinition: ServiceDefinition<HealthServiceApi> = {
   controller: "health",
   endpoints: {
-    ready: "ready",
+    ready: {
+      method: "GET",
+      path: "ready",
+    },
   },
 };

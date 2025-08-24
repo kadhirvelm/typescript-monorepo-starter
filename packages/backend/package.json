@@ -1,66 +1,66 @@
 {
-	"name": "@tsm-example/backend",
-	"version": "0.0.1",
-	"scripts": {
-		"build": "nest build",
-		"check": "tsc --noEmit",
-		"dev": "nest start --entryFile backend/src/main.js --debug --watch",
-		"start": "nest start --entryFile backend/src/main.js",
-		"serve": "pm2-runtime start ecosystem.config.js",
-		"lint": "biome check",
-		"lint:fix": "biome check --fix",
-		"test": "jest --colors",
-		"test:watch": "jest --watch"
-	},
-	"dependencies": {
-		"@nestjs/common": "^11.0.20",
-		"@nestjs/config": "^4.0.2",
-		"@nestjs/core": "^11.0.20",
-		"@nestjs/platform-express": "^11.0.20",
-		"@prisma/client": "^6.6.0",
-		"@tsm-example/database": "workspace:^",
-		"compression": "^1.8.0",
-		"dotenv": "^17.2.1",
-		"express": "^5.1.0",
-		"lodash": "^4.17.21",
-		"pm2": "^6.0.5"
-	},
-	"devDependencies": {
-		"@jest/globals": "^29.7.0",
-		"@nestjs/cli": "^11.0.6",
-		"@nestjs/schematics": "^11.0.5",
-		"@nestjs/testing": "^11.0.20",
-		"@types/compression": "^1.7.5",
-		"@types/express": "^5.0.1",
-		"@types/fs-extra": "^11.0.4",
-		"@types/jest": "^29.5.14",
-		"@types/lodash": "^4.17.16",
-		"@types/node": "^22.14.1",
-		"@types/supertest": "^6.0.3",
-		"jest": "^29.7.0",
-		"nodemon": "^3.1.9",
-		"ts-jest": "^29.3.2",
-		"ts-loader": "^9.5.2",
-		"ts-node": "^10.9.2",
-		"tsconfig-paths": "^4.2.0",
-		"typescript": "5.8.3",
-		"webpack": "^5.99.6"
-	},
-	"jest": {
-		"moduleFileExtensions": [
-			"js",
-			"json",
-			"ts"
-		],
-		"rootDir": "src",
-		"testRegex": ".*\\.spec\\.ts$",
-		"transform": {
-			"^.+\\.(t|j)s$": "ts-jest"
-		},
-		"collectCoverageFrom": [
-			"**/*.(t|j)s"
-		],
-		"coverageDirectory": "../coverage",
-		"testEnvironment": "node"
-	}
+  "name": "@tsm-example/backend",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "nest build",
+    "check": "tsc --noEmit",
+    "dev": "nest start --entryFile backend/src/main.js --debug --watch",
+    "start": "nest start --entryFile backend/src/main.js",
+    "serve": "pm2-runtime start ecosystem.config.js",
+    "lint": "biome check",
+    "lint:fix": "biome check --fix",
+    "test": "jest --colors",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.20",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.0.20",
+    "@nestjs/platform-express": "^11.0.20",
+    "@prisma/client": "^6.6.0",
+    "@tsm-example/database": "workspace:^",
+    "compression": "^1.8.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "lodash": "^4.17.21",
+    "pm2": "^6.0.5"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@nestjs/cli": "^11.0.6",
+    "@nestjs/schematics": "^11.0.5",
+    "@nestjs/testing": "^11.0.20",
+    "@types/compression": "^1.7.5",
+    "@types/express": "^5.0.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.14.1",
+    "@types/supertest": "^6.0.3",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "ts-jest": "^29.3.2",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "5.8.3",
+    "webpack": "^5.99.6"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
 }

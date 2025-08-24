@@ -5,9 +5,9 @@ import type { RemoveExtendsString, Service } from "@tsm-example/api";
  * Used to declare the interface for the expected backend implementation service.
  */
 export type ServiceControllerInterface<S extends Service> = {
-	[Key in keyof RemoveExtendsString<S>]: (
-		payload?: S[Key]["payload"],
-	) => S[Key]["response"] | Promise<S[Key]["response"]>;
+  [Key in keyof RemoveExtendsString<S>]: (
+    payload?: S[Key]["payload"],
+  ) => S[Key]["response"] | Promise<S[Key]["response"]>;
 };
 
 /**
@@ -15,5 +15,5 @@ export type ServiceControllerInterface<S extends Service> = {
  * change that in the future if needed.
  */
 export function getDecorator(endpoint: string) {
-	return Post(endpoint);
+  return Post(endpoint);
 }

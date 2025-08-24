@@ -21,7 +21,7 @@ export interface ServiceError {
 }
 
 /**
- * Typeguard for a network call.
+ * Type guard for a network call.
  */
 export const isServiceError = <T>(
   response: T | ServiceError,

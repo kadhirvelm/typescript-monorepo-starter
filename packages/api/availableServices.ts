@@ -8,10 +8,10 @@ export type AvailableServices = {
   health: HealthServiceApi;
 };
 
-export type AvailbleServicesDefinition = {
+export type AvailableServicesDefinition = {
   [key in keyof AvailableServices]: ServiceDefinition<AvailableServices[key]>;
 };
 
-export const AVAILABLE_SERVICES: AvailbleServicesDefinition = {
+export const AVAILABLE_SERVICES: AvailableServicesDefinition = {
   health: HealthServiceDefinition,
 };

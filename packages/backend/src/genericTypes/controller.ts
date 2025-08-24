@@ -1,5 +1,9 @@
-import { Post } from "@nestjs/common";
-import type { RemoveExtendsString, Service } from "@tsm-example/api";
+import { Delete, Get, Patch, Post, Put } from "@nestjs/common";
+import type {
+  RemoveExtendsString,
+  Service,
+  ServiceEndpoint,
+} from "@tsm-example/api";
 
 /**
  * Used to declare the interface for the expected backend implementation service.
@@ -14,6 +18,26 @@ export type ServiceControllerInterface<S extends Service> = {
  * All endpoints are POST requests for now, but this pseudo-decorator allows us to
  * change that in the future if needed.
  */
-export function getDecorator(endpoint: string) {
-  return Post(endpoint);
+export function getDecorator(endpoint: ServiceEndpoint<string>) {
+  if (typeof endpoint === "string") {
+    return Post(endpoint);
+  }
+
+  if (endpoint.method === "POST") {
+    return Post(endpoint.path);
+  }
+
+  if (endpoint.method === "PUT") {
+    return Put(endpoint.path);
+  }
+
+  if (endpoint.method === "DELETE") {
+    return Delete(endpoint.path);
+  }
+
+  if (endpoint.method === "PATCH") {
+    return Patch(endpoint.path);
+  }
+
+  return Get(endpoint.path);
 }

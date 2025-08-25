@@ -1,34 +1,32 @@
 {
-  "name": "tsm-example",
-  "packageManager": "bun@1.2.20",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "engines": {
-    "node": "23.11.0"
+  "dependencies": {
+    "@biomejs/biome": "^2.2.2",
+    "@prisma/client": "6.14.0",
+    "prisma": "^6.14.0"
   },
-  "scripts": {
-    "ci": "turbo run ci",
-    "check": "turbo run check",
-    "lint": "turbo run lint",
-    "dev": "./scripts/env.sh",
-    "dev:reset": "./scripts/env.sh reset",
-    "dev:local": "./scripts/env.sh local",
-    "test": "bun test"
-  },
-  "monorepo": true,
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/eslint": "^9.6.1",
     "@types/node": "^22.17.2",
     "bun": "^1.2.20",
     "turbo": "^2.5.6",
     "typescript": "5.9.2"
   },
-  "dependencies": {
-    "@biomejs/biome": "^2.2.2",
-    "@prisma/client": "6.14.0",
-    "prisma": "^6.14.0"
-  }
+  "engines": {
+    "node": "23.11.0"
+  },
+  "monorepo": true,
+  "name": "tsm-example",
+  "packageManager": "bun@1.2.20",
+  "private": true,
+  "scripts": {
+    "check": "turbo run check",
+    "ci": "turbo run ci",
+    "dev": "./scripts/env.sh",
+    "dev:local": "./scripts/env.sh local",
+    "dev:reset": "./scripts/env.sh reset",
+    "lint": "turbo run lint"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

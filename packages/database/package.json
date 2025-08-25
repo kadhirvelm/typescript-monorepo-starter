@@ -1,19 +1,19 @@
 {
-	"name": "@tsm-example/database",
-	"scripts": {
-		"db:migrate": "bunx prisma migrate deploy",
-		"db:create-migration": "bunx prisma migrate dev --create-only",
-		"db:generate": "bunx prisma format && yarn pnpify prisma generate",
-		"build": "bun db:generate"
-	},
-	"main": "src/index.js",
-	"types": "src/index.d.ts",
-	"devDependencies": {
-		"@yarnpkg/pnpify": "^4.1.4",
-		"prisma": "6.13.0"
-	},
-	"dependencies": {
-		"@prisma/client": "6.13.0"
-	},
-	"packageManager": "yarn@4.9.1"
+  "dependencies": {
+    "@prisma/client": "6.13.0"
+  },
+  "devDependencies": {
+    "@yarnpkg/pnpify": "^4.1.4",
+    "prisma": "6.13.0"
+  },
+  "main": "src/index.js",
+  "name": "@tsm-example/database",
+  "packageManager": "yarn@4.9.1",
+  "scripts": {
+    "database": "./scripts/database.sh",
+    "db:create-migration": "bunx prisma migrate dev --create-only",
+    "db:generate": "bunx prisma format && yarn pnpify prisma generate",
+    "db:migrate": "bunx prisma migrate deploy"
+  },
+  "types": "src/index.d.ts"
 }

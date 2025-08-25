@@ -1,16 +1,4 @@
 {
-  "name": "@tsm-example/backend",
-  "version": "0.0.1",
-  "scripts": {
-    "build": "nest build",
-    "check": "tsc --noEmit",
-    "dev": "nest start --entryFile backend/src/main.js --debug --watch",
-    "start": "nest start --entryFile backend/src/main.js",
-    "serve": "pm2-runtime start ecosystem.config.js",
-    "lint": "biome check",
-    "lint:fix": "biome check --fix",
-    "test": "bun test"
-  },
   "dependencies": {
     "@nestjs/common": "^11.0.20",
     "@nestjs/config": "^4.0.2",
@@ -28,12 +16,16 @@
     "@nestjs/cli": "^11.0.6",
     "@nestjs/schematics": "^11.0.5",
     "@nestjs/testing": "^11.1.6",
+    "@types/bun": "^1.2.20",
     "@types/compression": "^1.7.5",
     "@types/express": "^5.0.1",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.14.1",
     "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
     "nodemon": "^3.1.9",
     "supertest": "^7.1.4",
     "ts-loader": "^9.5.2",
@@ -41,5 +33,17 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "5.8.3",
     "webpack": "^5.99.6"
-  }
+  },
+  "name": "@tsm-example/backend",
+  "scripts": {
+    "build": "nest build",
+    "check": "tsc --noEmit",
+    "dev": "nest start --entryFile backend/src/main.js --debug --watch",
+    "lint": "biome check",
+    "lint:fix": "biome check --fix",
+    "serve": "pm2-runtime start ecosystem.config.js",
+    "start": "nest start --entryFile backend/src/main.js",
+    "test": "bun testing/test.sh"
+  },
+  "version": "0.0.1"
 }

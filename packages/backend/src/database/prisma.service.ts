@@ -1,6 +1,6 @@
 import { Injectable, Logger } from "@nestjs/common";
 import { PrismaClient } from "@tsm-example/database";
-import type { ConfigurationService } from "@/configuration/configuration.service";
+import { ConfigurationService } from "@/configuration/configuration.service";
 
 @Injectable()
 export class PrismaService {

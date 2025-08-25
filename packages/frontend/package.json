@@ -1,15 +1,4 @@
 {
-  "name": "@tsm-example/frontend",
-  "version": "0.1.0",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "check": "tsc --noEmit",
-    "start": "next start",
-    "lint": "biome check && stylelint '**/*.{css,scss}'",
-    "lint:fix": "biome check --fix && stylelint '**/*.{css,scss}' --fix",
-    "test": "bun test"
-  },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.2",
     "@radix-ui/react-slider": "^1.3.5",
@@ -38,5 +27,16 @@
     "stylelint-order": "^7.0.0",
     "typescript": "5.8.3",
     "typescript-plugin-css-modules": "^5.1.0"
-  }
+  },
+  "name": "@tsm-example/frontend",
+  "scripts": {
+    "build": "next build",
+    "check": "tsc --noEmit",
+    "dev": "next dev",
+    "lint": "biome check && stylelint '**/*.{css,scss}'",
+    "lint:fix": "biome check --fix && stylelint '**/*.{css,scss}' --fix",
+    "start": "next start",
+    "test": "bun test"
+  },
+  "version": "0.1.0"
 }

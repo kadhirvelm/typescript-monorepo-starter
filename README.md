@@ -156,7 +156,6 @@ typescript-monorepo-starter/
 │       │   ├── app/          # Next.js App Router
 │       │   ├── lib/          # Utility functions
 │       │   └── services/     # API integration
-│       └── jest.config.mjs   # Testing configuration
 ├── scripts/                   # Build and deployment scripts
 ├── biome.json                # Biome configuration
 ├── turbo.json                # Turbo build configuration
@@ -170,7 +169,7 @@ typescript-monorepo-starter/
 - **TypeScript** provides compile-time type checking
 
 ### **Testing**
-- **Jest** for unit and integration tests
+- **Bun** for tests
 - **Testing utilities** for mocking and assertions
 - **Coverage reporting** for test quality metrics
 

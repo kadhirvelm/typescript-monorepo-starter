@@ -1,5 +1,7 @@
+import { describe, expect, test } from "bun:test";
+
 describe("example", () => {
-  it("should pass", () => {
+  test("should pass", () => {
     expect(true).toBe(true);
   });
 });

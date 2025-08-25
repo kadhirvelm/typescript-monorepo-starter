@@ -5,6 +5,12 @@
     "build": {
       "dependsOn": ["^build"]
     },
+    "ci": {
+      "dependsOn": ["build", "lint", "test"]
+    },
+    "db:migrate": {
+      "env": ["DATABASE_HOST_URL", "DIRECT_URL"]
+    },
     "dev": {
       "env": [
         "POSTGRES_PASSWORD",
@@ -15,12 +21,6 @@
     },
     "lint": {
       "dependsOn": ["^build"]
-    },
-    "ci": {
-      "dependsOn": ["build", "lint", "test"]
-    },
-    "db:migrate": {
-      "env": ["DATABASE_HOST_URL", "DIRECT_URL"]
     },
     "test": {}
   }

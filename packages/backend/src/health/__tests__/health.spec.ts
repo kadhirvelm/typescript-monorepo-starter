@@ -1,3 +1,4 @@
+import { afterAll, beforeAll, describe, test } from "bun:test";
 import type { INestApplication } from "@nestjs/common";
 import { HealthServiceDefinition } from "@tsm-example/api";
 import { constructRequest } from "../../library/__tests__/constructRequest";
@@ -12,8 +13,8 @@ describe("HealthModule", () => {
     app = await createTestApp([HealthModule]);
   });
 
-  it("GET health", () => {
-    constructRequest(app, HealthServiceDefinition, "ready")
+  test("GET health", async () => {
+    await constructRequest(app, HealthServiceDefinition, "ready")
       .expect(200)
       .expect({
         status: `ok - ${VERSION}`,

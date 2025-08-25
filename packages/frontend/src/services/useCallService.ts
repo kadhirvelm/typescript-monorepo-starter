@@ -37,9 +37,9 @@ export function useCallService<T>(callback: () => Promise<T | ServiceError>) {
   const onReload = useCallback(() => setReloadKey((prev) => prev + 1), []);
 
   return {
-    isLoading,
-    result,
     error,
+    isLoading,
     onReload,
+    result,
   };
 }

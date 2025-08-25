@@ -1,20 +1,21 @@
 {
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true,
-    "**/*.js*": true
-  },
-  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+  "[javascript]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[json]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+  "[typescript]": { "editor.defaultFormatter": "biomejs.biome" },
   "editor.codeActionsOnSave": {
+    "source.action.useImportType.biome": "never",
     "source.action.useSortedAttributes.biome": "explicit",
     "source.fixAll": "explicit"
   },
-  "editor.formatOnSave": true,
   "editor.defaultFormatter": "biomejs.biome",
-  "[javascript]": { "editor.defaultFormatter": "biomejs.biome" },
-  "[typescript]": { "editor.defaultFormatter": "biomejs.biome" },
-  "[json]": { "editor.defaultFormatter": "biomejs.biome" },
-  "[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
-  "[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
-  "stylelint.validate": ["scss", "css"]
+  "editor.formatOnSave": true,
+  "search.exclude": {
+    "**/.pnp.*": true,
+    "**/.yarn": true,
+    "**/*.js*": true
+  },
+  "stylelint.validate": ["scss", "css"],
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

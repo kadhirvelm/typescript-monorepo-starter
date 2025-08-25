@@ -130,8 +130,23 @@ NODE_ENV=development
 
 4. **Run database migrations:**
 ```bash
-cd packages/database
-bun run db:migrate
+bun run database db:migrate
+```
+
+5. **Run tests:**
+To run the backend tests, which includes setting up a test database:
+```bash
+bun run test backend
+```
+
+to run the frontend tests, which will skip setting up the test database:
+```bash
+bun run test frontend
+```
+
+and to run all the tests, which will also setup a database:
+```bash
+bun run test
 ```
 
 ## 📁 Project Structure

@@ -10,3 +10,8 @@ datasource db {
   url       = env("DATABASE_HOST_URL")
   directUrl = env("DIRECT_URL")
 }
+
+model ExampleUser {
+  id   String @id @default(uuid())
+  name String
+}

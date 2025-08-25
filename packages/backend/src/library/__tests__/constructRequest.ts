@@ -7,11 +7,14 @@ import type {
 } from "@tsm-example/api";
 import request from "supertest";
 
-export function constructRequest<TestService extends Service>(
+export function constructRequest<
+  TestService extends Service,
+  Endpoint extends keyof RemoveExtendsString<TestService>,
+>(
   app: INestApplication,
   definition: ServiceDefinition<TestService>,
-  endpoint: keyof RemoveExtendsString<TestService>,
-  payload?: TestService[keyof TestService]["payload"],
+  endpoint: Endpoint,
+  payload?: TestService[Endpoint]["payload"],
 ) {
   const testAgent = request(app.getHttpServer());
 
@@ -21,18 +24,19 @@ export function constructRequest<TestService extends Service>(
   ] as ServiceEndpoint<string>;
 
   if (typeof method === "string") {
-    const finalEndpoint = `${definition.controller}/${method}`;
-    return testAgent.get(finalEndpoint);
+    const finalEndpoint = `/${definition.controller}/${method}`;
+    return testAgent.post(finalEndpoint).send(payload ?? {});
   }
 
-  const finalEndpoint = `${definition.controller}/${method.path}`;
+  const finalEndpoint = `/${definition.controller}/${method.path}`;
   if (method.method === "GET" && payload === undefined) {
     return testAgent.get(finalEndpoint);
   }
 
   if (method.method === "GET" && payload !== undefined) {
-    const newQuery = new URLSearchParams(payload as Record<string, string>);
-    return testAgent.get(finalEndpoint).query(newQuery);
+    return testAgent
+      .get(finalEndpoint)
+      .query(payload as Record<string, string>);
   }
 
   if (method.method === "POST") {

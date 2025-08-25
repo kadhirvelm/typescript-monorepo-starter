@@ -2,12 +2,12 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "outputs": ["dist/**"],
       "env": [
         "GAME_ORCHESTRATOR",
         "GAME_STATE_DATABASE_HOST_URL",
         "GAME_STATE_DIRECT_URL"
-      ]
+      ],
+      "outputs": ["dist/**"]
     },
     "dev": {
       "env": [
